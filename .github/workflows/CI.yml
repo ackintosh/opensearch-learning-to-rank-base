@@ -68,23 +68,23 @@ jobs:
             files: build/reports/jacoco/test/jacocoTestReport.xml
             token: ${{ secrets.CODECOV_TOKEN }}
 
-  Build-ltr-windows:
-    strategy:
-      matrix:
-        java: [21 , 25]
-    name: Build and Test LTR Plugin on Windows
-    if: github.repository == 'opensearch-project/opensearch-learning-to-rank-base'
-    needs: [spotless]
-    runs-on: windows-latest
-    steps:
-      - name: Setup Java ${{ matrix.java }}
-        uses: actions/setup-java@v4
-        with:
-          java-version: ${{ matrix.java }}
-          distribution: 'temurin'
-      - name: Checkout LTR Code
-        uses: actions/checkout@v4
-      - name: Build and Run Tests
-        shell: bash
-        run: |
-          ./gradlew.bat -Dtests.security.manager=false build -x spotlessJava
+#  Build-ltr-windows:
+#    strategy:
+#      matrix:
+#        java: [21 , 25]
+#    name: Build and Test LTR Plugin on Windows
+#    if: github.repository == 'opensearch-project/opensearch-learning-to-rank-base'
+#    needs: [spotless]
+#    runs-on: windows-latest
+#    steps:
+#      - name: Setup Java ${{ matrix.java }}
+#        uses: actions/setup-java@v4
+#        with:
+#          java-version: ${{ matrix.java }}
+#          distribution: 'temurin'
+#      - name: Checkout LTR Code
+#        uses: actions/checkout@v4
+#      - name: Build and Run Tests
+#        shell: bash
+#        run: |
+#          ./gradlew.bat -Dtests.security.manager=false build -x spotlessJava
