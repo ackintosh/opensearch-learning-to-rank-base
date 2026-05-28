@@ -2,11 +2,6 @@ name: Build and Test LTR
 # This workflow is triggered on pull requests and push to any branches
 on:
   push:
-    branches-ignore:
-      - 'backport/**'
-      - 'create-pull-request/**'
-      - 'dependabot/**'
-  pull_request:
 
 jobs:
   Get-CI-Image-Tag:
