@@ -10,7 +10,7 @@ jobs:
       product: opensearch
 
   spotless:
-    if: github.repository == 'opensearch-project/opensearch-learning-to-rank-base'
+#    if: github.repository == 'opensearch-project/opensearch-learning-to-rank-base'
     runs-on: ubuntu-latest
     strategy:
       matrix:
